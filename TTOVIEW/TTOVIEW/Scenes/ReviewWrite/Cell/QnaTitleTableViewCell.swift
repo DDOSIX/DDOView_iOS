@@ -9,15 +9,18 @@ import UIKit
 
 class QnaTitleTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var anserTextView: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        selectionStyle = .none
+        anserTextView.layer.borderWidth = 1
+        anserTextView.layer.borderColor = UIColor.appColor(.gray).withAlphaComponent(0.6).cgColor
+        anserTextView.layer.cornerRadius = 5
+        titleLabel.attributedText = "Q. 리뷰 제목을 써주세요.".customStyle(font: .regular, size: 12, color: .appColor(.blue), alignment: .left)
     }
     
 }

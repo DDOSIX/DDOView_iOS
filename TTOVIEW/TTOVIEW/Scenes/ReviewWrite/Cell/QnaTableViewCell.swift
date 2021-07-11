@@ -7,17 +7,26 @@
 
 import UIKit
 
-class QnATableViewCell: UITableViewCell {
-
+class QnaTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var anserTextView: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
+        
+        setUI()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func setUI() {
+        anserTextView.layer.borderWidth = 1
+        anserTextView.layer.borderColor = UIColor.appColor(.gray).withAlphaComponent(0.6).cgColor
+        anserTextView.layer.cornerRadius = 5
+    }
+    
+    func setBinde(question: Question) {
+        questionLabel.attributedText = "Q. \(question)".customStyle(font: .regular, size: 12, color: .appColor(.blue), alignment: .left)
     }
     
 }

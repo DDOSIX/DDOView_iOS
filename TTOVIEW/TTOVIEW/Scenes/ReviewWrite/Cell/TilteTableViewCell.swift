@@ -9,9 +9,13 @@ import UIKit
 
 class TilteTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        selectionStyle = .none
+        titleLabel.attributedText = "리뷰를 작성해주세요.".customStyle(font: .bold, size: 14, color: .appColor(.black), alignment: .left)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

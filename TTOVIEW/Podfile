@@ -1,0 +1,36 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'TTOVIEW' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for TTOVIEW
+
+  # Rx
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxDataSources'
+  pod 'NSObject+Rx'
+
+  # UI
+  pod 'SnapKit', '~> 5.0.0'
+  pod 'Hero'
+  pod 'Action'
+  
+  # Image Cache
+  pod 'Kingfisher'
+
+  # Network abstraction layer
+  pod 'Moya/RxSwift'
+
+  target 'TTOVIEWTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'TTOVIEWUITests' do
+    # Pods for testing
+  end
+
+end

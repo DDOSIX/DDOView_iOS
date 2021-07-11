@@ -8,16 +8,15 @@
 import UIKit
 
 class CommentWriteTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var commentSubjectLabel: UILabel!
+    @IBOutlet weak var commentCountLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        selectionStyle = .none
+        commentSubjectLabel.attributedText = "댓글".customStyle(font: .bold, size: 14, color: .black)
+        commentCountLabel.attributedText = "0개".customStyle(font: .bold, size: 14, color: .appColor(.blue))
     }
     
 }

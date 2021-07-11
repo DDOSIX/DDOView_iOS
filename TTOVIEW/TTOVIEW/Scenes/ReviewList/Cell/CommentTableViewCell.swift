@@ -8,16 +8,20 @@
 import UIKit
 
 class CommentTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nickNameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var action: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
     
+    func setBind(title: String, nickName: String, date: String) {
+        titleLabel.attributedText = title.customStyle(font: .bold, size: 16, color: .appColor(.black))
+        nickNameLabel.attributedText = title.customStyle(font: .light, size: 12, color: .appColor(.black))
+        dateLabel.attributedText = title.customStyle(font: .light, size: 12, color: .appColor(.black))
+    }
 }

@@ -14,11 +14,16 @@ class CompanyIntroTableViewCell: UITableViewCell {
     @IBOutlet weak var serviceBackgroundView: UIView!
     @IBOutlet weak var comanyTextView: UITextView!
     @IBOutlet weak var serviceTextView: UITextView!
+    @IBOutlet weak var reviewWriteButton: UIButton!
+    var event: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setUI()
+    }
+    @IBAction func gotoReviewWrite(_ sender: Any) {
+        event?()
     }
     
     func setUI() {
@@ -34,6 +39,12 @@ class CompanyIntroTableViewCell: UITableViewCell {
         serviceBackgroundView.layer.borderWidth = 1
         serviceTextView.contentInset = .zero
         serviceTextView.isEditable = false
+    }
+    
+    func setBind(companyContent: String?, serviceContent: String?) {
+        
+        comanyTextView.text = companyContent
+        serviceTextView.text = serviceContent
     }
     
 }

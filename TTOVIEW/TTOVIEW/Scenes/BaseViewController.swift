@@ -8,10 +8,9 @@
 import UIKit
 import RxSwift
 
-open class BaseViewController<T>:  UIViewController {
+class BaseViewController:  UIViewController {
     
-    open var viewModel: T!
-    open var disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     
     deinit {
         print("🔲🔲🔲 deinit LoginViewController")
